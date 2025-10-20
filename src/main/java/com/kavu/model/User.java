@@ -1,0 +1,23 @@
+package com.kavu.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.util.Optional;
+
+@Data
+@Entity
+@Table(name = "users")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true)
+    private String email;
+
+    private String password;
+
+    private String role;
+}
